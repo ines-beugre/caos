@@ -1,24 +1,33 @@
 package fr.istic.m1ccn.caos.api;
 
 import com.sun.jersey.spi.resource.Singleton;
+import fr.istic.m1ccn.caos.dao.DAOManager;
+import fr.istic.m1ccn.caos.models.Candidature;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Ines Beugre
  */
 
 @Singleton
-@Path("/produits")
+@Path("/candidature")
 @Produces ({MediaType.APPLICATION_JSON}) /*format de données*/
 @Consumes ({MediaType.APPLICATION_JSON})
 
-public class SessionManager {
-    
+    public class CandidatureManager { //
+
+    @DELETE
+    @Path("{idSessionUV}")
+    public String deleteCandidature (@PathParam("idSessionUV") String idSessionUV ){
+       //on recupère le DAOManager du candidature
+        DAOManager.getInstance().getCandidatureDAO().delete(idSessionUV);
+        //verifier que l'utilisateur est connecté
+        return "";
+    }
 
 
 

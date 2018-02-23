@@ -1,5 +1,7 @@
 package fr.istic.m1ccn.caos.models;
 
+import java.util.List;
+
 /**
  * @author Ines Beugre
  *

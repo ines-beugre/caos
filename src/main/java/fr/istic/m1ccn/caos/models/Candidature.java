@@ -7,6 +7,7 @@ package fr.istic.m1ccn.caos.models;
  */
 public class Candidature {
 
+    private Integer id;
     private String idAgent;
     private String idSession;
     private String statut;
@@ -20,6 +21,17 @@ public class Candidature {
         this.statut = statut;
         this.qualite = qualite;
         this.position = position;
+    }
+
+    public Candidature() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getIdAgent() {
